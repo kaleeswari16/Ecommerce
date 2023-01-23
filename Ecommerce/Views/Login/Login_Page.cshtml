@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Ecommerce.Models.Login
+    <h1 style="text-align:center; ">Customer Form</h1>
+    <style>
+        form {
+            margin-top: 30px;
+            height: 35rem;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255,255,255,0.06);
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
+            border-radius: 30px;
+            border-left: 1px solid rgba(255,255,255,.3);
+            border-top: 1px solid rgba(255,255,255,.3);
+        }
+        .button {
+            width: 50%;
+            margin: 3% auto;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 15px;
+            background: rgba(255,255,255,0.06);
+            padding: 10px 30px;
+          
+        }
+    </style>
+    <head>
+
+    </head>
+
+    <body class="head" style="background: linear-gradient(to left,#ffffff,#4af3ee,#ffffff); display:flex; flex-direction:column">
+        <form>
+
+            <label style="color:red; margin-left:100px">Name Required*</label>
+            <div class="row">
+                <div class="col-12">
+                    <a style="margin-left:100px">First Name</a>
+                    @Html.TextBoxFor(m => m.Name, new { style = "margin-left:50px; width:240px", @id = "name" })
+                    <i class="fa-sharp fa-solid fa-circle-check" style="color:red"></i>
+                    <i class="fa-sharp fa-solid fa-exclamation-circle" style="visibility:hidden; position:absolute;"></i>
+                    <a style="margin-left:132px">Last Name</a>
+                    @Html.TextBoxFor(m => m.lastname, new { style = "width:240px; margin-left:37px" })
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-12">
+                    <a style="margin-left:100px; color:red">Email*</a>
+                    <a style="margin-left:473px; color:red">Phone No*</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <a style="margin-left:100px">Email ID</a>
+                    @Html.TextBoxFor(k => k.email, new { style = "margin-left:65px; width:240px;", @placeholder = "abc@email.com" })
+                    <a style="margin-left:142px">Phone Number</a>
+                    @Html.TextBoxFor(k => k.phoneno, new { style = "margin-left:20px; width:240px" })
+                </div>
+            </div>
+            <br />
+            <a style="margin-left:100px; color:red">Age*</a>
+            <div class="row">
+                <div class="col-12">
+                    <a style="margin-left:100px">Age</a>
+                    @Html.TextBoxFor(K => K.dob, new { style = "margin-left:95px; width:240px", @placeholder = "Ex:18" })
+
+                </div>
+            </div>
+            <br />
+            <a style="margin-left:100px; color:red">Address*</a>
+            <div class="row">
+                <div class="col-12">
+                    <a style="margin-left:100px; color:dimgrey">Streetline1</a>
+                    @Html.TextBoxFor(m => m.stad1, new { style = "margin-left:45px; width:240px; padding:5px;", @placeholder = "Streetline1" })
+                <a style="margin-left:148px; color:dimgrey">Streetline2</a>
+                    @Html.TextBoxFor(m => m.stad2, new { style = "margin-left:45px; width:240px; padding:5px;", @placeholder = "Streetline2" })
+                </div>
+            </div>
+          
+            <br />
+            <div class="row">
+                <div class="col-12">
+                    <a style="margin-left:101px; color:dimgrey">City</a>
+                    @Html.TextBoxFor(m => m.city, new { style = "margin-left:95px; width:240px", @placeholder = "City" })
+                    <a style="margin-left:140px; color:dimgrey">State/Province</a>
+                    @Html.TextBoxFor(m => m.state, new { style = "margin-left:20px; width:240px", @placeholder = "state/province" })
+                </div>
+            </div>
+           
+            <br />
+            <div class="row">
+                <div class="col-12">
+                    <a style="margin-left:101px; color:dimgray">Country</a>
+                    @Html.TextBoxFor(m => m.country, new { style = "margin-left:65px; width:240px", @placeholder = "Country" })
+                    <a style="margin-left:140px; color:dimgray">Postal/Zipcode</a>
+                    @Html.TextBoxFor(m => m.postal, new { style = "margin-left:20px; width:240px", @placeholder = "postal" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                   
+                   
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" asp-action="Insert" value="Submit" style="width: 200px; border-radius: 30px; padding:5px ;border: none; "  />
+            </div>
+
+        </form>
+    </body>
